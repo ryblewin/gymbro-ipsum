@@ -1,5 +1,5 @@
 ---
-
+import '../css/global.css';
 ---
 
 <html lang="en">
@@ -8,14 +8,18 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Gym Bro Ipsum</title>
+		<title>GymBro Ipsum</title>
 	</head>
 	<body>
-		<header></header>
-		<main></main>
-		<!-- <aisde>
-			TODO: share links, about, etc. 
-		</aisde> -->
-		<footer></footer>
+		<header class="header">
+			<img src="/logo.png" alt="gym bro ipsum logo, a dumbbell against a blue backdrop" width="75px" height="75px" />
+		</header>
+		<main class="container">
+			<article class="content">
+			<h1 class="title">GymBro Ipsum</h1>
+			<p class="tagline">Bro! Crank up your projects with the roidiest placeholder text.</p>
+			</article>
+		</main>
+		<footer class="footer">Crafted with muscle and grit by ryblewin - because even your filler text should lift, bro! 💪</footer>
 	</body>
 </html>
