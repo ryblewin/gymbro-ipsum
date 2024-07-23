@@ -1,5 +1,6 @@
 ---
 import '../css/global.css';
+
 ---
 
 <html lang="en">
@@ -15,10 +16,39 @@ import '../css/global.css';
 			<img src="/logo.png" alt="gym bro ipsum logo, a dumbbell against a blue backdrop" width="75px" height="75px" />
 		</header>
 		<main class="container">
-			<article class="content">
-			<h1 class="title">GymBro Ipsum</h1>
-			<p class="tagline">Bro! Crank up your projects with the roidiest placeholder text.</p>
-			</article>
+			<span>
+				<h1 class="title">GymBro Ipsum</h1>
+				<p class="tagline">Bro! Crank up your projects with the roidiest placeholder text.</p>
+			</span>
+			<div class="content">
+				<form class="controls-form">
+					<h2 class="form-title">Gymbro Ipsum Options</h2>	
+					<span class="number-input-container">
+						<label class="form-label" for="paragraph_count">Rep Count</label>
+						<input type="number" id="paragraph_count" name="paragraph_count" value="3">
+					</span>
+					<fieldset class="fieldset">
+						<legend class="form-label">Set Length</legend>
+						<span class="radio-input-container">
+							<label class="" for="paragraph_length_short">Warm-Up</label>
+							<input class="" type="radio" id="paragraph_length_short" name="paragraph_length" value='short'>
+						</span>
+						<span class="radio-input-container">
+							<label class="" for="paragraph_length_medium">Workout</label>
+							<input type="radio" id="paragraph_length_medium" name="paragraph_length" value="medium">
+						</span>
+						<span class="radio-input-container">
+							<label class="" for="paragraph_length_long">Beast Mode</label>
+							<input type="radio" id="paragraph_length_long" name="paragraph_length" value="long">
+						</span>
+				</fieldset>				
+				<button class="form-button">All board the gains train</button>
+			</form>
+			<section class="text-content">
+				<h2 class="text-content-title">Generated Text</h2>
+				<div class="generated-text-content"></div>
+			</section>
+		</div>
 		</main>
 		<footer class="footer">Crafted with muscle and grit by ryblewin - because even your filler text should lift, bro! 💪</footer>
 	</body>
