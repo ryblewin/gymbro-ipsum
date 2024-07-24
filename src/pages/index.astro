@@ -1,6 +1,8 @@
 ---
 import '../css/global.css';
+import { getParagraph } from '../scripts/wordbank.ts';
 
+const testWords = getParagraph();
 ---
 
 <html lang="en">
@@ -46,7 +48,9 @@ import '../css/global.css';
 			</form>
 			<section class="text-content">
 				<h2 class="text-content-title">Generated Text</h2>
-				<div class="generated-text-content"></div>
+				<div class="generated-text-content">
+					<p>{testWords}</p>
+				</div>
 			</section>
 		</div>
 		</main>

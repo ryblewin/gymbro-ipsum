@@ -133,6 +133,8 @@ body {
   flex-grow: 1;
   width: 100%;
   background: var(--color-primary);
+  padding: 1rem;
+  overflow-y: scroll;
 }
 
 .controls-form {
