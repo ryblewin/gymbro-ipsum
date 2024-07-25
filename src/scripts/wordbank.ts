@@ -146,13 +146,16 @@ const getWordCount = (paragraph: Paragraph): number => {
   return Math.floor(Math.random() * (upperBound - lowerBound + 1)) + lowerBound;
 };
 
-export const getParagraph = (
+export const getParagraphs = (
   count: number = 3,
   length: Paragraph = "medium"
 ) => {
-  const paragraph = new Array(getWordCount(length)).fill(null).map(() => {
-    return WORDBANK[Math.floor(Math.random() * WORDBANK.length)]?.value;
-  });
-
-  return paragraph.join(" ");
+  return new Array(count).fill(
+    new Array(getWordCount(length))
+      .fill(null)
+      .map(() => {
+        return WORDBANK[Math.floor(Math.random() * WORDBANK.length)]?.value;
+      })
+      .join(" ")
+  );
 };
