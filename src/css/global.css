@@ -96,6 +96,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   padding: 4rem 6rem;
+  overflow-y: hidden;
 }
 
 .title {
@@ -111,6 +112,7 @@ body {
 .content {
   display: flex;
   height: 100%;
+  overflow-y: hidden;
 }
 
 .text-content {
@@ -121,6 +123,7 @@ body {
   background: var(--color-secondary);
   border: 2px solid var(--color-secondary);
   border-radius: 4px;
+  overflow-y: hidden;
 }
 
 .text-content-title {
@@ -137,14 +140,17 @@ body {
   overflow-y: scroll;
 }
 
+.text-content-block {
+  margin-bottom: 1rem;
+}
+
 .controls-form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-width: 30%;
-  padding: 1rem 2rem 1rem 0;
+  padding: 1rem 2rem 1rem 0.5rem;
   gap: 1rem;
-  padding: 1rem;
 }
 
 .form-title {
@@ -163,9 +169,27 @@ body {
   gap: 0.5rem;
 }
 
+.number-input {
+  border: 2px solid var(--color-secondary);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
 .fieldset {
   border: none;
   padding: 0;
+  width: 100%;
+}
+
+.form-radios {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+}
+
+.radio-input-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-button {

@@ -1,59 +1,100 @@
 ---
-import '../css/global.css';
-import { getParagraph } from '../scripts/wordbank.ts';
+import "../css/global.css";
+import { getParagraphs } from "../scripts/wordbank.ts";
 
-const testWords = getParagraph();
+const paragraphs = getParagraphs();
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>GymBro Ipsum</title>
-	</head>
-	<body>
-		<header class="header">
-			<img src="/logo.png" alt="gym bro ipsum logo, a dumbbell against a blue backdrop" width="75px" height="75px" />
-		</header>
-		<main class="container">
-			<span>
-				<h1 class="title">GymBro Ipsum</h1>
-				<p class="tagline">Bro! Crank up your projects with the roidiest placeholder text.</p>
-			</span>
-			<div class="content">
-				<form class="controls-form">
-					<h2 class="form-title">Gymbro Ipsum Options</h2>	
-					<span class="number-input-container">
-						<label class="form-label" for="paragraph_count">Rep Count</label>
-						<input type="number" id="paragraph_count" name="paragraph_count" value="3">
-					</span>
-					<fieldset class="fieldset">
-						<legend class="form-label">Set Length</legend>
-						<span class="radio-input-container">
-							<label class="" for="paragraph_length_short">Warm-Up</label>
-							<input class="" type="radio" id="paragraph_length_short" name="paragraph_length" value='short'>
-						</span>
-						<span class="radio-input-container">
-							<label class="" for="paragraph_length_medium">Workout</label>
-							<input type="radio" id="paragraph_length_medium" name="paragraph_length" value="medium">
-						</span>
-						<span class="radio-input-container">
-							<label class="" for="paragraph_length_long">Beast Mode</label>
-							<input type="radio" id="paragraph_length_long" name="paragraph_length" value="long">
-						</span>
-				</fieldset>				
-				<button class="form-button">All board the gains train</button>
-			</form>
-			<section class="text-content">
-				<h2 class="text-content-title">Generated Text</h2>
-				<div class="generated-text-content">
-					<p>{testWords}</p>
-				</div>
-			</section>
-		</div>
-		</main>
-		<footer class="footer">Crafted with muscle and grit by ryblewin - because even your filler text should lift, bro! 💪</footer>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>GymBro Ipsum</title>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="/logo.png"
+        alt="gym bro ipsum logo, a dumbbell against a blue backdrop"
+        width="75px"
+        height="75px"
+      />
+    </header>
+    <main class="container">
+      <span>
+        <h1 class="title">GymBro Ipsum</h1>
+        <p class="tagline">
+          Bro! Crank up your projects with the roidiest placeholder text.
+        </p>
+      </span>
+      <div class="content">
+        <form class="controls-form">
+          <h2 class="form-title">Gymbro Ipsum Options</h2>
+          <span class="number-input-container">
+            <label class="form-label" for="paragraph_count">Rep Count</label>
+            <input
+              class="number-input"
+              type="number"
+              id="paragraph_count"
+              name="paragraph_count"
+              value="3"
+            />
+          </span>
+          <fieldset class="fieldset">
+            <legend class="form-label">Set Length</legend>
+            <span class="form-radios">
+              <span class="radio-input-container">
+                <input
+                  class=""
+                  type="radio"
+                  id="paragraph_length_short"
+                  name="paragraph_length"
+                  value="short"
+                />
+                <label class="" for="paragraph_length_short"> Warm-Up </label>
+              </span>
+              <span class="radio-input-container">
+                <input
+                  type="radio"
+                  id="paragraph_length_medium"
+                  name="paragraph_length"
+                  value="medium"
+                  checked
+                />
+                <label class="" for="paragraph_length_medium"> Workout </label>
+              </span>
+              <span class="radio-input-container">
+                <input
+                  type="radio"
+                  id="paragraph_length_long"
+                  name="paragraph_length"
+                  value="long"
+                />
+                <label class="" for="paragraph_length_long">Beast Mode</label>
+              </span>
+            </span>
+          </fieldset>
+          <button class="form-button" onclick="getParagraphs"
+            >All board the gains train</button
+          >
+        </form>
+        <section class="text-content">
+          <h2 class="text-content-title">Generated Text</h2>
+          <div class="generated-text-content">
+            {
+              paragraphs.map((p: string) => {
+                return <p class="text-content-block">{p}</p>;
+              })
+            }
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      Crafted with muscle and grit by ryblewin - because even your filler text
+      should lift, bro! 💪
+    </footer>
+  </body>
 </html>
